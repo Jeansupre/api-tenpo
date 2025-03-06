@@ -31,7 +31,8 @@ public class HistorialController {
                             content = @Content(
                                     mediaType = "application/json",
                                     schema = @Schema(implementation = HistorialLlamadaDTO.class)
-                            ))
+                            )),
+                    @ApiResponse(responseCode = "204", description = "No hay contenido")
             }
     )
     @GetMapping("/obtenerTodos")
