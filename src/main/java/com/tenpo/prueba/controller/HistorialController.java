@@ -2,6 +2,10 @@ package com.tenpo.prueba.controller;
 
 import com.tenpo.prueba.dto.HistorialLlamadaDTO;
 import com.tenpo.prueba.service.interfaces.IHistorialService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +22,18 @@ public class HistorialController {
 
     private final IHistorialService historialService;
 
+    @Operation(
+            summary = "obtenerTodos",
+            description = "Endpoint para obtener el historial de todos los endpoints llamados",
+            tags = {"Historial"},
+            responses = {
+                    @ApiResponse(responseCode = "200", description = "Lista de endpoints llamados",
+                            content = @Content(
+                                    mediaType = "application/json",
+                                    schema = @Schema(implementation = HistorialLlamadaDTO.class)
+                            ))
+            }
+    )
     @GetMapping("/obtenerTodos")
     public ResponseEntity<List<HistorialLlamadaDTO>> obtenerHistorial() {
         var historial = historialService.obtenerHistorialLlamadas();
