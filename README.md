@@ -60,7 +60,7 @@ Algunos endpoints clave:
 | Método  | URL | Descripción |
 |---------|------------------------------|----------------|
 | `GET`   | `/tenpo/api/v1/operaciones/suma` | Obtiene la suma de dos números con un porcentaje extra |
-| `GET`   | `/tenpo/api/v1/historial` | Obtiene el historial de llamadas |
+| `GET`   | `/tenpo/api/v1/historial/obtenerTodos` | Obtiene el historial de llamadas |
 
 ---
 
