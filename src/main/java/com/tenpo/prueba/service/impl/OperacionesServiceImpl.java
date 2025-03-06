@@ -38,7 +38,7 @@ public class OperacionesServiceImpl implements IOperacionesService {
         return num * porcentaje;
     }
 
-    public Long obtenerPorcentajeExterno() {
+    private Long obtenerPorcentajeExterno() {
         try {
             Long resultadoExterno = apiExterna.obtenerPorcentaje().getBody();
             if (resultadoExterno == null) {
