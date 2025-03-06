@@ -79,6 +79,7 @@
 			<artifactId>spring-boot-starter-cache</artifactId>
 		</dependency>
 
+
 		<!-- Postgres -->
 		<dependency>
 			<groupId>org.postgresql</groupId>
@@ -149,6 +150,13 @@
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
 			<version>2.16.0</version>
+		</dependency>
+
+		<!-- Junit -->
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<scope>test</scope>
 		</dependency>
 
 	</dependencies>
