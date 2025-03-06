@@ -1,20 +1,30 @@
 package com.tenpo.prueba.model;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
 
-import java.sql.Timestamp;
+import java.io.Serial;
+import java.io.Serializable;
+import java.util.Date;
 import java.util.Map;
 
 @Getter
 @Setter
 @Entity
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "historial_llamadas")
-public class HistorialLlamada {
+@Schema(name = "HistorialLlamada", description = "Entidad que representa el historial de llamadas a los endpoints")
+public class HistorialLlamada implements Serializable {
+
+    @Serial
+    private static final long serialVersionUID = -2882841117241721394L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "historial_llamadas_id_gen")
     @SequenceGenerator(name = "historial_llamadas_id_gen", sequenceName = "historial_llamadas_id_seq", allocationSize = 1)
@@ -23,7 +33,7 @@ public class HistorialLlamada {
 
     @ColumnDefault("now()")
     @Column(name = "fecha", nullable = false)
-    private Timestamp fecha;
+    private Date fecha;
 
     @Column(name = "endpoint", nullable = false, length = 250)
     private String endpoint;
@@ -34,7 +44,7 @@ public class HistorialLlamada {
 
     @Column(name = "respuesta")
     @JdbcTypeCode(SqlTypes.JSON)
-    private Map<String, Object> respuesta;
+    private String respuesta;
 
     @Column(name = "error", length = 250)
     private String error;

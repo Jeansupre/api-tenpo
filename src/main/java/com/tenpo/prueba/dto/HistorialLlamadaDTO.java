@@ -1,12 +1,10 @@
 package com.tenpo.prueba.dto;
 
 import lombok.Data;
-import lombok.Value;
 
 import java.io.Serial;
 import java.io.Serializable;
 import java.sql.Timestamp;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -21,7 +19,7 @@ public class HistorialLlamadaDTO implements Serializable {
     private Timestamp fecha;
     private String endpoint;
     private Map<String, Object> parametros;
-    private Map<String, Object> respuesta;
+    private String respuesta;
     private String error;
     private Long statusCode;
 }
