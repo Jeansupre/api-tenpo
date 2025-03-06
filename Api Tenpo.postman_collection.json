@@ -1,0 +1,364 @@
+{
+	"info": {
+		"_postman_id": "2654991f-389e-4240-bb60-0f7b4d07c089",
+		"name": "Api Tenpo",
+		"description": "Colecciones de los endpoints que se desarrollaron para la prueba técnica proporcionada por Tenpo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42871543"
+	},
+	"item": [
+		{
+			"name": "Operaciones",
+			"item": [
+				{
+					"name": "suma",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/tenpo/api/v1/operaciones/suma?num1=10&num2=20",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tenpo",
+								"api",
+								"v1",
+								"operaciones",
+								"suma"
+							],
+							"query": [
+								{
+									"key": "num1",
+									"value": "10"
+								},
+								{
+									"key": "num2",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 - Petición servicio externo correcta",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/tenpo/api/v1/operaciones/suma?num1=10&num2=20",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tenpo",
+										"api",
+										"v1",
+										"operaciones",
+										"suma"
+									],
+									"query": [
+										{
+											"key": "num1",
+											"value": "10"
+										},
+										{
+											"key": "num2",
+											"value": "20"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Mar 2025 03:32:27 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"resultado\": 33\n}"
+						},
+						{
+							"name": "200 - Petición servicio externo fallida",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/tenpo/api/v1/operaciones/suma?num1=10&num2=20",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tenpo",
+										"api",
+										"v1",
+										"operaciones",
+										"suma"
+									],
+									"query": [
+										{
+											"key": "num1",
+											"value": "10"
+										},
+										{
+											"key": "num2",
+											"value": "20"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Mar 2025 03:32:27 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"resultado\": 33\n}"
+						},
+						{
+							"name": "500 - No se encontró el porcentaje en caché",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/tenpo/api/v1/operaciones/suma?num1=10&num2=20",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tenpo",
+										"api",
+										"v1",
+										"operaciones",
+										"suma"
+									],
+									"query": [
+										{
+											"key": "num1",
+											"value": "10"
+										},
+										{
+											"key": "num2",
+											"value": "20"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Mar 2025 03:33:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 500,\n    \"message\": \"No se encontró el porcentaje en caché.\",\n    \"tipo\": \"error\",\n    \"uri\": null,\n    \"posibilidad_continuar\": false\n}"
+						}
+					]
+				}
+			],
+			"description": "En esta colección se encuentra el endpoint para la suma de dos números enteros ingresados por parámetros a los cuales al ser sumados se les agregará un porcentaje obtenido de un servicio externo."
+		},
+		{
+			"name": "Historial",
+			"item": [
+				{
+					"name": "obtenerTodos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/tenpo/api/v1/historial/obtenerTodos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tenpo",
+								"api",
+								"v1",
+								"historial",
+								"obtenerTodos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "204 - No hay registros",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/tenpo/api/v1/historial/obtenerTodos",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tenpo",
+										"api",
+										"v1",
+										"historial",
+										"obtenerTodos"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Mar 2025 07:41:39 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "200 - Hay registros en base de datos",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/tenpo/api/v1/historial/obtenerTodos",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tenpo",
+										"api",
+										"v1",
+										"historial",
+										"obtenerTodos"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "160"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Mar 2025 07:41:52 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"fecha\": \"2025-03-06T07:41:39.239+00:00\",\n        \"endpoint\": \"GET /tenpo/api/v1/historial/obtenerTodos\",\n        \"parametros\": {},\n        \"respuesta\": null,\n        \"error\": null,\n        \"statusCode\": 204\n    }\n]"
+						}
+					]
+				}
+			],
+			"description": "En esta colección se encuentra el endpoint para la obtención del historial de llamada de endpoints."
+		}
+	]
+}
