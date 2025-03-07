@@ -32,7 +32,8 @@ public class RegistroInterceptor implements HandlerInterceptor {
         if (!request.getRequestURI().contains("/tenpo/api")) {
             return true;
         }
-        request.setAttribute("startTime", System.currentTimeMillis());
+        Date date = new Date();
+        request.setAttribute("startTime", date.getTime());
         return true;
     }
 
